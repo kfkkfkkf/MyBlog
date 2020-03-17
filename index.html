@@ -2,41 +2,61 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>事件处理</title>
-<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<title>HI MAN</title>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
-	td{
-		text-align:center;
+	body{
+		background-image: url(img/index/background.jpg);
+		background-repeat:no-repeat ;
+		background-size:100% 100%;
+		background-attachment: fixed;
+	}
+	.test{
+		background-color:rgba(68,68,222,0.1);
+		width: 333px;
+		height:333px;
+		border-radius: 10px;
+		position:absolute; top:50%;left:50%; 
+		margin-top:-100px; margin-left:-200px;
 	}
 	</script>
 </style>
 <body>
-	<table border="1">
-		<tr>
-			<td colspan="3"><img src="img/index/1.jpg"></td>
-			</tr>
-			<tr>
-				<td id="tank" >坦克</td>
-				<td id="sc">输出</td>
-				<td id="nw">奶位</td>
-				</tr>
-				<tr>
-					<td colspan="3" ><img id="img" src="img/index/t.jpg"></td>
-					</tr>
-	</table>
-<script>
-$("#tank").click(function()
-{
-	$("#img").attr("src","img/index/t.jpg");
-});
-$("#sc").click(function()
-{
-	$("#img").attr("src","img/index/c.jpg");
-});
-$("#nw").click(function()
-{
-	$("#img").attr("src","img/index/n.jpg");
-});
-</script>
+	<center>
+	<h1>Welcome</h1>
+	<hr>
+	<div class="test">
+		<form>
+								<h5>请回答</h5>
+								<hr>
+								<div class="form-group">
+									<label for="name">问题：我最近在玩什么</label>
+								</div>
+								<div class="form-group">
+									<label>你的答案
+										<input type="text" class="form-control" id="answer" placeholder="input your answer" />
+									</label>
+								</div>
+								<input type="button" class="btn btn-info" value="确定" />
+							</form>
+		<script>
+			$(function() {
+							$(".btn").click(function() {
+								var answer = $("#answer").val();
+								var swxf = "守望先锋"
+								if(answer == swxf){
+									$(function() {
+										$(location).prop('href', 'pages/Home.html');
+									})
+								}else {
+									alert(answer)
+								}
+							})
+						})
+			</script>
+			</center>
+		</div>
 </body>
 </html>
