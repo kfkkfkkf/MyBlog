@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<title>梦中飞行</title>
+		<style>
+			h1{
+				font-family: "黑体";
+			}
+			.tail{
+				text-align: center;
+				background-color: cornflowerblue;
+			}
+			h3{
+				font-family: "仿宋";
+				color: darkgray;
+			}
+			.title{
+				font-family: "黑体";
+				font-size: 30px;
+			}
+			.time{
+				font-family: "仿宋";
+				margin-right: 20px;
+			}
+			.type{
+				font-family: "仿宋";
+				margin: 0px 20px;
+			}
+			.ico{
+				width:17px;
+				height:17px;
+				margin-right: 5px;
+			}
+			span{
+				text-align: center;
+				width:17px;
+				height:17px;
+			}
+			.blog{
+				margin-top: 20px;
+				border:1px solid #DCDCDC;
+			}
+			.text{
+				font-family: "宋体";
+				font-size: 23px;
+			}
+			.context
+			{
+				
+			}
+			</style>
+	</head>
+	<body>
+		<div class="container">
+		<h1>梦中飞行的个人博客</h1>
+		<h3>言行合一</h3>
+		<hr>
+		<div class="row">
+			<div class="col-sm-4 col-xs-12 col-sm-offset-4" style="text-align: center;">
+		<p class="title">JVM运行机制</p>
+		<span class="time"><img src="../../img/ico/time.png" class="ico">2018-08-02</span>|<span class="type"><img class="ico" src="../../img/ico/type.png">分类：JVM</span>
+			</div>
+			</div>
+			<hr>
+			
+				<div class="row">
+					<div class="col-sm-8 col-xs-12 col-sm-offset-2">
+			<span class="text">首先要知道jvm是由五大部分组成，分别是类装载子系统，运行时数据区，执行引擎，本地方法接口和内存回收机制<br></span>
+			
+			<span class="text">先是类装载子系统，它把所有引用到的类，接口以及包一起装载到文件下</span><br>
+			
+			<span class="text">然后是最重要的运行时数据区</span><br>
+			<span class="text">：JVM由主方法入口执行程序，并将主方法压入java栈，并生成该方法相应的栈桢，然后由程序计数器提供的指令来一步步执行
+			<span class="text">：执行中遇到调用java方法则将其压入java栈中，遇到变量赋值，就存储在局部变量表中，遇到表达式，则用操作数栈来进行运算，并将结果弹出栈返回，遇到调用其它类时，就用动态链接，遇到本地方法则调用本地方法栈，遇到常量对象时，将其分配到运行时常量池中，遇到实例化对象时，先获取方法区中的类信息，然后在堆当中给其分配相应的空间</span><br>
+			<span class="text">：堆当中，根据流行的分代GC算法，可以将其分为两部分：新生代和老年代</span><br>
+			<span class="text">：新生代又分为Eden，s1，s2，其中新对象一般都分配在Eden中，当Eden内存不足时，会触发MinorGC（清完无用对象后，把Eden和s1中幸存的对象复制到s2，s2放不下就放老年代，再清空二者，最后s1和s2互换），对象在s区中每度过一次GC年龄加1，到指定值时放入老年代（默认15岁）</span><br>
+			<span class="text">：老年代相对稳定，它在内存不足或无法给大对象分配连续空间时会触发Major GC（用标记-整理算法来清理内存，速度相对缓慢），当老年代内存还是不足时，会抛出outofmemory异常</span><br>
+			<span class="text">：永久代是用来存放clss和元数据的信息，且GC 不会在主程序运行期对永久区域进行清理</span><br>
+			<img src="../../img/blogs/JVM运行机制/1.jpg">
+			</div>
+			</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-sm-12 tail">
+					版权所有:梦中飞行-1748627503@qq.com
+					</div>
+				</div>
+			</div>
+			
+	</body>
+</html>
